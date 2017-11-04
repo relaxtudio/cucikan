@@ -1,0 +1,191 @@
+<style>
+.header{
+    background: #e9eaec;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height:50px;
+    padding: 0 50px;
+}
+#adm-menu{
+    background-color: #87504F;
+	width: auto;
+	color: #F2F3F3;
+   }
+#adm-menu ul li:hover span, #adm-menu ul li:hover > a{
+	color: #EF8585;
+}
+.mm-menu .mm-divider, .mm-menu .mm-listview>li.mm-opened.mm-vertical>.mm-panel, .mm-menu .mm-listview>li.mm-opened.mm-vertical>a.mm-next, .mm-menu.mm-vertical .mm-listview>li.mm-opened>.mm-panel, .mm-menu.mm-vertical .mm-listview>li.mm-opened>a.mm-next {
+    background: rgba(0, 0, 0, 0);
+}
+.mm-menu .mm-listview>li .mm-next:after {
+    border-color: rgba(0,0,0,.3);
+	display:none;
+}
+</style>
+<nav id="adm-menu">
+	<ul>
+		<li style="height:175px;background-color: #CD5B59;">
+		<br></br>
+		<br></br>
+			<p style="padding-left:20px;font-size: 26px;"><b><?php echo $_SESSION['user']['nama'];?></b></p>
+			<p style="padding-left:20px;font-size:16px;margin-top:-20px;"><?php echo $_SESSION['user']['alamat'];?> <br />
+			<b><?php echo $_SESSION['user']['kota_kab'];?></b></p>
+		</li>
+		<li>
+			<a id="dashboard" href="#dashboard">
+			<i class="fa fa-dashboard"></i> <b>Dashboard</b>
+			<script>
+			$(document).ready(function(){
+				$('#dashboard').click(function(){
+					$('#adm-content').load('dashboard/dashboard.php');
+				});
+			});
+			</script>
+			</a>
+		</li>  
+		
+		<li><span><i class="fa fa-list-alt"></i> <b>List</b>&nbsp;&nbsp;<i class="fa fa-chevron-down"></i></span>
+			<ul style="padding-left:30px;">
+				<li><a id="user" href="#user">
+						<i class="fa fa-users"></i> <b>Akun</b>
+					<script>
+					$(document).ready(function(){
+						$('#user').click(function(){
+							$('#adm-content').load('user/list_usr.php');
+						});
+					});
+					</script>
+					</a>
+				</li>
+				<li>
+					<a id="order" href="#order">
+						<i class="fa fa-shopping-cart"></i> <b>Order</b>
+					<script>
+					$(document).ready(function(){
+						$('#order').click(function(){
+							$('#adm-content').load('order/total_order.php');
+						});
+					});
+					</script>
+					</a>
+				</li>
+				<li>
+					<a id="mobil" href="#mobil">
+						<i class="fa fa-car"></i> <b>Mobil</b>
+					<script>
+					$(document).ready(function(){
+						$('#mobil').click(function(){
+							$('#adm-content').load('mobil/list_mobil_adm.php');
+						});
+					});
+					</script>
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<li><span><i class="fa fa-pencil-square-o"></i> <b>Service & Payment</b> &nbsp;&nbsp;<i class="fa fa-chevron-down"></i></span>
+			<ul style="padding-left:30px;">
+				<li>
+					<a id="service" href="#service">
+						<i class="fa fa-briefcase"></i> <b>Paket Layanan</b>
+					<script>
+					$(document).ready(function(){
+						$('#service').click(function(){
+							$('#adm-content').load('paket/list_paket.php');
+						});
+					});
+					</script>
+					</a>					
+				</li>
+				<li>
+					<a id="payment" href="#payment">
+						<i class="fa fa-money"></i> <b>Tipe Pembayaran</b>
+					<script>
+					$(document).ready(function(){
+						$('#payment').click(function(){
+							$('#adm-content').load('pembayaran/list_pembayaran.php');
+						});
+					});
+					</script>
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<li>
+			<a id="profile" href="#profile">
+				<i class="fa fa-user"></i> <b>Profile</b>
+			<script>
+			$(document).ready(function(){
+				$('#profile').click(function(){
+					$('#adm-content').load('profile/edit_profile_form.php');
+				});
+			});
+			</script>
+			</a>
+		</li>
+		<li>
+			<a id="help" href="#help">
+				<i class="fa fa-question-circle" aria-hidden="true"></i> <b>Bantuan</b>
+			<script>
+			$(document).ready(function(){
+				$('#help').click(function(){
+					$('#adm-content').load('../pages/under_construct.html');
+				});
+			});
+			</script>
+			</a>
+		</li>
+			
+		<li>
+			<a id="logout" href="../process/logout.php">
+				<i class="fa fa-sign-out"></i> <b>Logout</b>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	<a id="my-icon" class="hamburger hamburger--emphatic" type="button" style="margin-left:-55px;">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>		
+	</a>
+	<a href="adm-home.php">
+	<img src="../assets/img/logo-vici1.png" style="width:165px;height:50px;position:absolute;">
+	</a>
+	<script>
+	var $menu = $("#adm-menu").mmenu({
+	   //   options
+		navbar:{
+			add: false
+		},
+		"extensions": [
+            "border-none"
+         ],
+		"slidingSubmenus": false
+	});
+	var $icon = $("#my-icon");
+	var API = $menu.data( "mmenu" );
+
+	$icon.on( "click", function() {
+	   API.open();
+	});
+
+	API.bind( "opened", function() {
+	   setTimeout(function() {
+		  $icon.addClass( "is-active" );
+	   }, 100);
+	});
+	API.bind( "closed", function() {
+	   setTimeout(function() {
+		  $icon.removeClass( "is-active" );
+	   }, 100);
+	});
+	</script>

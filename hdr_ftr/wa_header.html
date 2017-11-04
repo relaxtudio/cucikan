@@ -1,0 +1,100 @@
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Rasputin" content="">
+
+    <title>Cucikan Official</title>
+
+    <!-- Bootstrap Core CSS -->
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/vendor/data-tables/responsive.dataTables.min.css" rel="stylesheet">
+	<link href="../assets/vendor/data-tables/dataTables.bootstrap.css" rel="stylesheet">
+	
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../assets/vendor/device-mockups/device-mockups.min.css">
+
+	<!-- jQuery -->
+	<script src="../assets/vendor/jquery/jquery.min.js"></script>
+	<script src="../assets/vendor/jquery/jquery.mmenu.all.min.js"></script>
+    <link href="../assets/vendor/jquery/jquery.mmenu.all.css" rel="stylesheet">
+	<link href="../assets/vendor/jquery/jquery-ui.min.css" rel="stylesheet">
+	<script src="../assets/vendor/jquery/jquery-ui.min.js"></script>
+	<link href="../assets/vendor/jquery/hamburgers.min.css" rel="stylesheet">
+	<script src="../assets/vendor/jquery/jquery.timepicker.min.js"></script>
+	<link href="../assets/vendor/jquery/jquery.timepicker.css" rel="stylesheet">
+	
+    <!-- Theme CSS -->
+	<link href="../assets/css/new-age.min.css" rel="stylesheet">
+	<link href="../assets/img/icon.png" rel="shortcut icon">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style>
+	body{
+	background: #e9eaec;
+	}
+	
+	.panel-default{
+		 background-color: white;
+		 border-color: black;
+	}
+	#panel-profile,#panel-mobil,#panel-edit-mobil,#panel-order{
+		background-color:transparent;
+	}
+	td.details-control {
+	background: url("../assets/img/details_open.png") no-repeat center center;
+	cursor: pointer;
+	}
+	tr.shown td.details-control {
+		background: url("../assets/img/details_close.png") no-repeat center center;
+	}
+	div.dataTables_filter input.form-control.input-sm {
+		max-width:60%;
+		white-space:nowrap;
+	}
+	@media screen and (max-width: 850px) {
+		div.dataTables_length,
+		div.dataTables_filter {
+			text-align:left;
+		}
+		div.dataTables_length select.form-control.input-sm {
+			margin-left: 30px;
+		}
+		div.dataTables_filter input.form-control.input-sm {
+			margin-left: 37px;
+			width:50%;
+		}
+		#panel-profile,#panel-mobil,#panel-edit-mobil,#panel-order{
+		background-color:transparent;
+		width:100%;
+		}
+	}
+	nav {
+		display: none;
+	}
+	table {
+		table-layout:fixed;
+	}
+	table td {
+		word-wrap: break-word;
+		max-width: 400px;
+	}
+	</style>
+	<script>
+	function logout()
+		{
+		tanya = confirm("Anda yakin akan logout?");
+		if (tanya == true){ return true;}
+		else {return false;}
+		}
+	</script>

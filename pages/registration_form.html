@@ -1,0 +1,73 @@
+<form id="register" class="form-horizontal" action="process/registration.php" method="POST">
+	<div class="form-group">
+		<label class="col-md-4 control label" for="username" style="font-size:20px;">Username</label>
+		<div class="col-md-6">
+			<input id="username" name="username" type="text" placeholder="Masukkan username anda" maxlength="15" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="password" style="font-size:20px;">Password</label>
+		<div class="col-md-6">
+			<input id="password" name="password" type="password" placeholder="Masukkan password anda" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="email" style="font-size:20px;">Email</label>
+		<div class="col-md-6">
+			<input id="email" name="email" type="text" placeholder="Masukkkan email anda" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="nama" style="font-size:20px;">Nama</label>
+		<div class="col-md-6">
+			<input id="nama" name="nama" type="text" placeholder="Masukkan nama anda" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="gender" style="font-size:20px;">Jenis Kelamin	</label>
+		<div class="col-md-6" style="color:white;">
+		<div class="radio">
+			<label for="gender-0">
+			<input type="radio" name="gender" id="gender-0" value="pria" required>
+			Pria
+			</label>
+		</div>
+		<div class="radio">
+			<label for="gender-1">
+			<input type="radio" name="gender" id="gender-1" value="wanita" required>
+			Wanita
+			</label>
+		</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="alamat" style="font-size:20px;">Alamat</label>
+		<div class="col-md-6">
+			<textarea id="alamat" name="alamat" placeholder="Masukkan alamat tempat tinggal anda" class="form-control input-md" required></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="kota_kab" style="font-size:20px;">Kota/Kabupaten</label>
+		<div class="col-md-6">
+			<input id="kota_kab" name="kota_kab" type="text" placeholder="Masukkan kota tempat tinggal" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="kecamatan" style="font-size:20px;">Kecamatan</label>
+		<div class="col-md-6">
+			<input id="kecamatan" name="kecamatan" type="text" placeholder="Masukkan kecamatan rumah anda" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control label" for="telepon" style="font-size:20px;">Telepon</label>
+		<div class="col-md-6">
+			<input id="telepon" name="telepon" type="text" placeholder="Masukkan nomor telepon anda" class="form-control input-md" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-4 control-label" for="simpan_reg"></label>
+		<div class="col-md-6">
+			<button id="simpan_reg" class="btn btn-outline btn-xl" style="background-color:transparent;">Register Me!</button>
+		</div>
+	</div>
+</form>

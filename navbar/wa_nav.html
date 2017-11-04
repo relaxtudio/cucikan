@@ -1,0 +1,134 @@
+<style>
+.header{
+    background: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height:50px;
+    padding: 0 50px;
+}
+#my-menu{
+    background-color: #175A74;
+	width: auto;
+	color: #fff;
+   }
+
+</style>
+<nav id="my-menu">
+	<ul>
+		<li style="height:175px;background-color: #15B6D8;">
+		<br></br>
+		<br></br>
+			<p style="padding-left:20px;font-size: 26px;"><b><?php echo $_SESSION['user']['nama'];?></b></p>
+			<p style="padding-left:20px;font-size:16px;margin-top:-20px;"><?php echo $_SESSION['user']['alamat'];?> <br />
+			<b><?php echo $_SESSION['user']['kota_kab'];?></b></p>
+		</li>
+		<li>
+			<a id="home" href="#home">
+			<i class="fa fa-home"></i> <b>Home</b>
+			<script>
+			$(document).ready(function(){
+				$('#home').click(function(){
+					$('#content').load('../web-apps/home-content');
+				});
+			});
+			</script>
+			</a>
+		</li>  
+		
+		<li>
+			<a id="order" href="#order">
+				<i class="fa fa-list-alt"></i> <b>Order Baru</b>
+			<script>
+			$(document).ready(function(){
+				$('#order').click(function(){
+					$('#content').load('../web-apps/order/new_order');
+					});
+				});
+			</script>
+			</a>
+		</li>
+		
+		<li>
+			<a id="mobil" href="#mobil">
+				<i class="fa fa-car"></i> <b>Tambah Mobil</b>
+			<script>
+			$(document).ready(function(){
+				$('#mobil').click(function(){
+					$('#content').load('../web-apps/mobil/new_mobil');
+					});
+				});
+			</script>
+			</a>
+		</li>
+		
+		<li>
+			<a id="profile" href="#profile">
+				<i class="fa fa-user"></i> <b>Profile</b>
+			<script>
+			$(document).ready(function(){
+				$('#profile').click(function(){
+					$('#content').load('../web-apps/profile/edit_profile_form');
+				});
+			});
+			</script>
+			</a>
+		</li>
+		<li>
+			<a id="help" href="#help">
+				<i class="fa fa-question-circle" aria-hidden="true"></i> <b>Bantuan</b>
+			</a>
+		</li>
+			
+		<li>
+			<a id="logout" href="../process/logout">
+				<i class="fa fa-sign-out"></i> <b>Logout</b>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	<a id="my-icon" class="hamburger hamburger--collapse" type="button" style="margin-left:-55px;">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>		
+	</a>
+	<a href="home">
+	<img src="../assets/img/logo-vici1.png" style="width:165px;height:50px;position:absolute;">
+	</a>
+	<script>
+	var $menu = $("#my-menu").mmenu({
+	   //   options
+		navbar:{
+			add: false
+		},
+		"extensions": [
+            "border-none"
+         ],
+		"setSelected": {
+           "hover": true
+        }
+	});
+	var $icon = $("#my-icon");
+	var API = $menu.data( "mmenu" );
+
+	$icon.on( "click", function() {
+	   API.open();
+	});
+
+	API.bind( "opened", function() {
+	   setTimeout(function() {
+		  $icon.addClass( "is-active" );
+	   }, 100);
+	});
+	API.bind( "closed", function() {
+	   setTimeout(function() {
+		  $icon.removeClass( "is-active" );
+	   }, 100);
+	});
+	</script>
